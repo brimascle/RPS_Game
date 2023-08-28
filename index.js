@@ -1,3 +1,7 @@
+const playerScore = document.querySelector('#playerScore');
+const computerScore = document.querySelector('#computerScore');
+const resultText = document.querySelector('#resultText');
+
 const options = ["rock", "paper", "scissor"];
 function getComputerChoice() {
     const choice = options[Math.floor(Math.random()*options.length)];
@@ -24,8 +28,13 @@ function playRound(playerSelection, computerSelection) {
         return `Player Win. ${playerSelection} beats ${computerSelection}.`;
     } else {
         return `Computer Win. ${computerSelection} beats ${playerSelection}`;
-    }
+    } 
 }
+
+
+
+/* 
+old version for javascript only game
 
 function getPlayerChoice() {
     let validateInput = false;
@@ -44,6 +53,27 @@ function getPlayerChoice() {
     }
     
 }
+*/
+
+const btns = document.querySelectorAll('button');
+
+btns.forEach(button => button.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = button.textContent;
+
+    
+    if(checkWinner(playerSelection, computerSelection) == 'Player') {
+        playerScore.textContent++;
+    } else if(checkWinner(playerSelection, computerSelection) == 'Computer') {
+        computerScore.textContent++;
+    } else {
+        alert("tie");
+    }
+
+}))
+
+/*
+old version for javascript only game
 
 function game() {
     let scorePlayer = 0;
@@ -72,3 +102,5 @@ function game() {
 
 
 game()
+
+*/
