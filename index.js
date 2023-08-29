@@ -19,6 +19,8 @@ function checkWinner(playerSelection, computerSelection) {
         return "Computer";
     }
 }
+/*
+Does not need anymore
 
 function playRound(playerSelection, computerSelection) {
     const result = checkWinner(playerSelection, computerSelection);
@@ -30,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
         return `Computer Win. ${computerSelection} beats ${playerSelection}`;
     } 
 }
-
+*/
 
 
 /* 
